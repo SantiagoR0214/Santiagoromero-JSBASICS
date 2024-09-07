@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Basics</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>JavaScript Basics</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Tutorials</a></li>
+                <li><a href="#">Concepts</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Master Async Programming in JavaScript</h2>
+            <p>Learn how JavaScript handles asynchronous operations with callbacks, promises, and async/await, improving performance in modern web applications.</p>
+        </section>
+
+        <section class="topics">
+            <div class="topic-item">
+                <img src="img/image1.png" alt="Async JavaScript" class="topic-img">
+                <h3>JavaScript Asynchronous</h3>
+                <p>Asynchronous programming allows tasks to be completed without blocking the main thread, enhancing performance.</p>
+                <a href="#async">Learn More</a>
+            </div>
+            <div class="topic-item">
+                <img src="img/image2.jpg" alt="Callbacks in JavaScript" class="topic-img">
+                <h3>Using Callbacks</h3>
+                <p>Callbacks are functions passed as arguments to other functions, executed later when tasks are complete.</p>
+                <a href="#callback">Learn More</a>
+            </div>
+            <div class="topic-item">
+                <img src="img/image3.png" alt="JavaScript Promises" class="topic-img">
+                <h3>Promises in Action</h3>
+                <p>Promises simplify async code by managing success and failure cases with a cleaner syntax.</p>
+                <a href="#promise">Learn More</a>
+            </div>
+            <div class="topic-item">
+                <img src="img/image4.png" alt="Async Await in JavaScript" class="topic-img">
+                <h3>Mastering Async/Await</h3>
+                <p>Async/Await syntax makes working with promises even more readable and easier to understand.</p>
+                <a href="#async-await">Learn More</a>
+            </div>
+            <div class="topic-item">
+                <img src="img/image5.png" alt="JavaScript Event Loop" class="topic-img">
+                <h3>Event Loop Explained</h3>
+                <p>The event loop allows JavaScript to handle multiple async tasks efficiently on a single thread.</p>
+                <a href="#eventLoop">Learn More</a>
+            </div>
+        </section>
+
+        <section id="async">
+            <h2>JavaScript Asynchronous Programming</h2>
+            <p>Async programming allows functions to run without waiting for other operations to finish. This makes your code more efficient and responsive.</p>
+            <pre><code>// Example: Basic async function
+async function fetchData() {
+    let data = await fetch('https://api.example.com/data');
+    return await data.json();
+}
+fetchData().then(console.log);
+            </code></pre>
+        </section>
+
+        <section id="callback">
+            <h2>Working with Callbacks</h2>
+            <p>Callbacks are an older, but effective way to handle asynchronous tasks. By passing a function as a parameter, you can execute it once the main function has finished.</p>
+            <pre><code>// Example: Callback function
+function fetchData(callback) {
+    setTimeout(() => {
+        console.log("Data retrieved");
+        callback();
+    }, 1000);
+}
+
+fetchData(() => {
+    console.log("Callback executed");
+});
+            </code></pre>
+        </section>
+
+        <section id="promise">
+            <h2>Promises in JavaScript</h2>
+            <p>Promises provide a cleaner way to manage async operations. They can be resolved or rejected, allowing you to handle success and failure cases.</p>
+            <pre><code>// Example: Promise
+let myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("Task successful"), 1500);
+});
+
+myPromise.then(result => console.log(result));
+            </code></pre>
+        </section>
+
+        <section id="async-await">
+            <h2>Async and Await</h2>
+            <p>The `async` and `await` keywords offer an elegant solution for writing asynchronous code. Async functions return promises, and await pauses execution until a promise resolves.</p>
+            <pre><code>// Example: Async/Await
+async function getData() {
+    let response = await fetch('https://api.example.com/resource');
+    let data = await response.json();
+    console.log(data);
+}
+getData();
+            </code></pre>
+        </section>
+
+        <section id="eventLoop">
+            <h2>Understanding the Event Loop</h2>
+            <p>JavaScript's event loop allows it to handle asynchronous tasks efficiently, ensuring non-blocking execution even with a single-threaded environment.</p>
+            <pre><code>// Example: Event loop in action
+console.log('Start');
+
+setTimeout(() => console.log('Async task completed'), 2000);
+
+console.log('End');
+            </code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 JavaScript Basics | By Santiago Romero</p>
+    </footer>
+</body>
+
+</html>
